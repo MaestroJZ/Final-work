@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using Application.DTOs;
 using AutoMapper;
-using Domain;
+using Domain.Models;
 using Infrastructure.DAO.Repositories;
 
 namespace Application.Services.Impls;

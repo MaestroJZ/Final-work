@@ -1,5 +1,5 @@
 using System.Linq.Expressions;
-using Domain;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.DAO.Repositories.Impls;

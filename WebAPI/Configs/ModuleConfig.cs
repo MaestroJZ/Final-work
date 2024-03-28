@@ -16,5 +16,4 @@ public static class ModuleConfig
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         services.AddTransient(typeof(IBaseService<,>), typeof(BaseService<,>));
     }
-
 }
