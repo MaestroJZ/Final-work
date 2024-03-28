@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OVOXCN34BlOiUPvImphsh+gQyLt/s1owiZazpXL+YGoGUUU29cNrr6Gsf+rukLWvEdGpTmakfYT50Am242hxBg==",
+  "dgSpecHash": "dOOcIp2YisATiTGHRA/7dp9ZerUhiCLSqm2z3/vtKmXnTbSxm2xQ3P8gpM/u0V5KYZG5Xcdvqz7RrAZqiwLIOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\eldar\\RiderProjects\\Final-work\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\eldar\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.3\\microsoft.entityframeworkcore.8.0.3.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",

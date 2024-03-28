@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "12Mjpjq8qakGhr+EjaOKwT82JsxGXB+KVhcTeZaeErYxXN69WsKOU5KBVcpjXXx6Zm1o9sUBVGS0At3o3qvtHg==",
+  "dgSpecHash": "gPqqob1yvNAOoJ6w6Ajj4LkYepzXyLC3r8sS/+NvG1Ms+qWem4ob07x/qH5AgE6FQehe77TPBy21gYYCmGANIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\eldar\\RiderProjects\\Final-work\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\eldar\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.3\\microsoft.entityframeworkcore.8.0.3.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\eldar\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.3\\microsoft.entityframeworkcore.analyzers.8.0.3.nupkg.sha512",
