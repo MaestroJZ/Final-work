@@ -11,6 +11,7 @@ public static class ModuleConfig
 {
     public static void ConfigureModule(this IServiceCollection services)
     {
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddScoped<DbContext, DataContext>();
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         services.AddTransient(typeof(IBaseService<,>), typeof(BaseService<,>));
