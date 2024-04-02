@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Domain.Models;
 
 public class Entity 
 {
-    public Guid Id { get; set; }
+    [Key]
+    public int Id { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; } = null;
 }

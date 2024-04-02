@@ -10,8 +10,8 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
     where T:Entity
     where TDto:BaseDto
 {
-    private readonly IBaseRepository<T> _repository;
-    private readonly IMapper _mapper;
+    protected readonly IBaseRepository<T> _repository;
+    protected readonly IMapper _mapper;
 
     public BaseService(IBaseRepository<T> repository, IMapper mapper) 
     {
@@ -34,7 +34,7 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
         }
     }
 
-    public async Task Delete(Guid id)
+    public async Task Delete(int id)
     {
         var entity = await _repository.SelectFirst(x => x.Id == id);
         if (entity != null)
