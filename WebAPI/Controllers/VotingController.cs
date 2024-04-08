@@ -19,13 +19,24 @@ public class VotingController : BaseController
         {
             bool success = await _votingService.Vote(votingId, ballotOptionId, fullName, phoneNumber);
             if (success)
-                return Ok("Vote registered successfully");
+            {
+                return ResponseOk("Vote registered successfully");
+            }   
             else
-                return NotFound("Voting or ballot option not found, or user already voted");
+            {
+                return ResponseError("Voting or ballot option not found, or user already voted");
+            }
+            return BadRequest("Error");
         }
         catch (Exception ex)
         {
-            return StatusCode(500, $"Internal server error: {ex.Message}");
+            return ResponseException(ex);
         }
+    }
+    
+    [HttpGet]
+    public IActionResult Get()
+    {
+        return Ok("Work");
     }
 }

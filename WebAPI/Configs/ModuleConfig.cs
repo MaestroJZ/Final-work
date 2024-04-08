@@ -15,5 +15,6 @@ public static class ModuleConfig
         services.AddScoped<DbContext, DataContext>();
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         services.AddTransient(typeof(IBaseService<,>), typeof(BaseService<,>));
+        services.AddScoped<IVotingService, VotingService>();
     }
 }

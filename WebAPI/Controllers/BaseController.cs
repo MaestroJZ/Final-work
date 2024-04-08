@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-[Route("api/[controller]/[action]")]
 [ApiController]
+[Route("api/[controller]/[action]")]
 public class BaseController : ControllerBase
 {
     /// <summary>
@@ -43,5 +43,10 @@ public class BaseController : ControllerBase
     {
         var result = new { result = "User unauthorized", successed = successed };
         return Unauthorized(result);
+    }
+    protected IActionResult ResponseError(object data, bool successed = false)
+    {
+        var result = new { result = data, successed = successed };
+        return BadRequest(result);
     }
 }
