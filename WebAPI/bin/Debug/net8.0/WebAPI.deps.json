@@ -12,11 +12,19 @@
           "Microsoft.AspNetCore.OpenApi": "8.0.3",
           "Microsoft.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore.Design": "8.0.3",
-          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.3",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
           "WebAPI.dll": {}
+        }
+      },
+      "ADRaffy.ENSNormalize/0.1.5": {
+        "runtime": {
+          "lib/net5.0/ADRaffy.ENSNormalize.dll": {
+            "assemblyVersion": "0.1.5.0",
+            "fileVersion": "0.1.5.0"
+          }
         }
       },
       "AutoMapper/13.0.1": {
@@ -278,17 +286,6 @@
           }
         }
       },
-      "Microsoft.Data.Sqlite.Core/8.0.3": {
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.6"
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "assemblyVersion": "8.0.3.0",
-            "fileVersion": "8.0.324.11510"
-          }
-        }
-      },
       "Microsoft.EntityFrameworkCore/8.0.3": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.3",
@@ -334,25 +331,6 @@
         },
         "runtime": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "8.0.3.0",
-            "fileVersion": "8.0.324.11510"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite/8.0.3": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "8.0.3",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.6"
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/8.0.3": {
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "8.0.3",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.3",
-          "Microsoft.Extensions.DependencyModel": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
             "assemblyVersion": "8.0.3.0",
             "fileVersion": "8.0.324.11510"
           }
@@ -434,141 +412,280 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.6",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.6"
-        },
+      "NBitcoin.Secp256k1/3.1.1": {
         "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {
-            "assemblyVersion": "2.1.6.2060",
-            "fileVersion": "2.1.6.2060"
+          "lib/net6.0/NBitcoin.Secp256k1.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.6": {
+      "Nethereum.ABI/4.20.0": {
         "dependencies": {
-          "System.Memory": "4.5.3"
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "2.1.6.2060",
-            "fileVersion": "2.1.6.2060"
+          "lib/net8.0/Nethereum.ABI.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
           }
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.6": {
-        "runtimeTargets": {
-          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
-            "rid": "browser-wasm",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-arm/native/libe_sqlite3.so": {
-            "rid": "linux-arm",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-arm64/native/libe_sqlite3.so": {
-            "rid": "linux-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-armel/native/libe_sqlite3.so": {
-            "rid": "linux-armel",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-mips64/native/libe_sqlite3.so": {
-            "rid": "linux-mips64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
-            "rid": "linux-musl-arm",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
-            "rid": "linux-musl-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
-            "rid": "linux-musl-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
-            "rid": "linux-ppc64le",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-s390x/native/libe_sqlite3.so": {
-            "rid": "linux-s390x",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/libe_sqlite3.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x86/native/libe_sqlite3.so": {
-            "rid": "linux-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
-            "rid": "maccatalyst-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
-            "rid": "maccatalyst-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
-            "rid": "osx-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-arm/native/e_sqlite3.dll": {
-            "rid": "win-arm",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-arm64/native/e_sqlite3.dll": {
-            "rid": "win-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/e_sqlite3.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/e_sqlite3.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
+      "Nethereum.Accounts/4.20.0": {
+        "dependencies": {
+          "Nethereum.KeyStore": "4.20.0",
+          "Nethereum.RPC": "4.20.0",
+          "Nethereum.Signer": "4.20.0",
+          "Nethereum.Signer.EIP712": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Accounts.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.6": {
+      "Nethereum.BlockchainProcessing/4.20.0": {
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.6"
+          "Nethereum.Contracts": "4.20.0",
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.JsonRpc.RpcClient": "4.20.0",
+          "Nethereum.RPC": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
-            "assemblyVersion": "2.1.6.2060",
-            "fileVersion": "2.1.6.2060"
+          "lib/net8.0/Nethereum.BlockchainProcessing.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Contracts/4.20.0": {
+        "dependencies": {
+          "ADRaffy.ENSNormalize": "0.1.5",
+          "Nethereum.ABI": "4.20.0",
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.RPC": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Contracts.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Hex/4.20.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Hex.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.JsonRpc.Client/4.20.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.JsonRpc.Client.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.JsonRpc.RpcClient/4.20.0": {
+        "dependencies": {
+          "Nethereum.JsonRpc.Client": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.JsonRpc.RpcClient.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.KeyStore/4.20.0": {
+        "dependencies": {
+          "Nethereum.Hex": "4.20.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Portable.BouncyCastle": "1.8.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.KeyStore.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Merkle.Patricia/4.20.0": {
+        "dependencies": {
+          "Nethereum.Model": "4.20.0",
+          "Nethereum.RLP": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Merkle.Patricia.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Model/4.20.0": {
+        "dependencies": {
+          "Nethereum.RLP": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Model.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.RLP/4.20.0": {
+        "dependencies": {
+          "Nethereum.Hex": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.RLP.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.RPC/4.20.0": {
+        "dependencies": {
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.JsonRpc.Client": "4.20.0",
+          "Nethereum.Merkle.Patricia": "4.20.0",
+          "Nethereum.Model": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.RPC.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Signer/4.20.0": {
+        "dependencies": {
+          "NBitcoin.Secp256k1": "3.1.1",
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.Model": "4.20.0",
+          "Nethereum.RLP": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Portable.BouncyCastle": "1.8.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Signer.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Signer.EIP712/4.20.0": {
+        "dependencies": {
+          "Nethereum.ABI": "4.20.0",
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.Signer": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Signer.EIP712.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Util/4.20.0": {
+        "dependencies": {
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.RLP": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Util.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Nethereum.Web3/4.20.0": {
+        "dependencies": {
+          "Nethereum.ABI": "4.20.0",
+          "Nethereum.Accounts": "4.20.0",
+          "Nethereum.BlockchainProcessing": "4.20.0",
+          "Nethereum.Contracts": "4.20.0",
+          "Nethereum.Hex": "4.20.0",
+          "Nethereum.JsonRpc.RpcClient": "4.20.0",
+          "Nethereum.KeyStore": "4.20.0",
+          "Nethereum.RPC": "4.20.0",
+          "Nethereum.Signer": "4.20.0",
+          "Nethereum.Util": "4.20.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Nethereum.Web3.dll": {
+            "assemblyVersion": "4.20.0.0",
+            "fileVersion": "4.20.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "Npgsql/8.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.dll": {
+            "assemblyVersion": "8.0.2.0",
+            "fileVersion": "8.0.2.0"
+          }
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.3",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.3",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.3",
+          "Npgsql": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "assemblyVersion": "8.0.2.0",
+            "fileVersion": "8.0.2.0"
+          }
+        }
+      },
+      "Portable.BouncyCastle/1.8.2": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.2.0",
+            "fileVersion": "1.8.2.223"
           }
         }
       },
@@ -684,7 +801,6 @@
         }
       },
       "System.IO.Pipelines/6.0.3": {},
-      "System.Memory/4.5.3": {},
       "System.Reflection.Metadata/6.0.1": {
         "dependencies": {
           "System.Collections.Immutable": "6.0.0"
@@ -707,7 +823,9 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "Domain": "1.0.0",
-          "Infrastructure": "1.0.0"
+          "Infrastructure": "1.0.0",
+          "Nethereum.Contracts": "4.20.0",
+          "Nethereum.Web3": "4.20.0"
         },
         "runtime": {
           "Application.dll": {}
@@ -722,7 +840,7 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.3",
-          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.3"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2"
         },
         "runtime": {
           "Infrastructure.dll": {}
@@ -735,6 +853,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ADRaffy.ENSNormalize/0.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cdCbVBXLqt+q6nF02MjY3NBAN024UfxLzvSgklidWG384h6Rqz5PCcyo55hqQbe7JS8w1+XJ5x5bSNaj07eqQw==",
+      "path": "adraffy.ensnormalize/0.1.5",
+      "hashPath": "adraffy.ensnormalize.0.1.5.nupkg.sha512"
     },
     "AutoMapper/13.0.1": {
       "type": "package",
@@ -799,13 +924,6 @@
       "path": "microsoft.codeanalysis.workspaces.common/4.5.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512"
     },
-    "Microsoft.Data.Sqlite.Core/8.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1euU97SivROH7nVIh2c/V63e0nQ73Txr/YlysB7fJuTV8LcfeL9WO1gdiJWcRIDoq8/McxcTc7evY6JJ1pD95w==",
-      "path": "microsoft.data.sqlite.core/8.0.3",
-      "hashPath": "microsoft.data.sqlite.core.8.0.3.nupkg.sha512"
-    },
     "Microsoft.EntityFrameworkCore/8.0.3": {
       "type": "package",
       "serviceable": true,
@@ -840,20 +958,6 @@
       "sha512": "sha512-8JnVZHWaNFkrrD/FC0O4jekiHIYey8y6TQ4Co3OzLz0wd5Dm1cwJfTp++1TvaVu0BBd4bVDtiktppa5epuoPrA==",
       "path": "microsoft.entityframeworkcore.relational/8.0.3",
       "hashPath": "microsoft.entityframeworkcore.relational.8.0.3.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Sqlite/8.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mdHNwlJkV71pKJU1MzIbjHWyjLw03S2kCO6mnuZL6V7uDv5ZxncoT5OELUiv7wRAYxnBucrl7ZPT76hwhBKBFw==",
-      "path": "microsoft.entityframeworkcore.sqlite/8.0.3",
-      "hashPath": "microsoft.entityframeworkcore.sqlite.8.0.3.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Sqlite.Core/8.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6DvYtnLdpViXgA5F2Z/cIJfWIv31Eby5j2YqUzr+sgJulKtCX+ypvmfooXlYnCwJDlcmIaMY27TMnlrCcUvZmA==",
-      "path": "microsoft.entityframeworkcore.sqlite.core/8.0.3",
-      "hashPath": "microsoft.entityframeworkcore.sqlite.core.8.0.3.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
@@ -946,33 +1050,152 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
-    "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
+    "NBitcoin.Secp256k1/3.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BmAf6XWt4TqtowmiWe4/5rRot6GerAeklmOPfviOvwLoF5WwgxcJHAxZtySuyW9r9w+HLILnm8VfJFLCUJYW8A==",
-      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.6",
-      "hashPath": "sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512"
+      "sha512": "sha512-ekF91qDK2+TI9FFhXvjClfUOQ3DWxNhvjh8Eoqawk1KPk/hCURpc8xoyeprtAiIoM5wgPnWeFxQybVWhl2NsHA==",
+      "path": "nbitcoin.secp256k1/3.1.1",
+      "hashPath": "nbitcoin.secp256k1.3.1.1.nupkg.sha512"
     },
-    "SQLitePCLRaw.core/2.1.6": {
+    "Nethereum.ABI/4.20.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wO6v9GeMx9CUngAet8hbO7xdm+M42p1XeJq47ogyRoYSvNSp0NGLI+MgC0bhrMk9C17MTVFlLiN6ylyExLCc5w==",
-      "path": "sqlitepclraw.core/2.1.6",
-      "hashPath": "sqlitepclraw.core.2.1.6.nupkg.sha512"
+      "sha512": "sha512-oDRJy0lpHePD3T6xcmyy8Q4/Oz7soS5jkYL6ITA3L8aZ/9h7dr9yNOFcNCMoSN/eTUFS528OKZtH2CXy3J5t/g==",
+      "path": "nethereum.abi/4.20.0",
+      "hashPath": "nethereum.abi.4.20.0.nupkg.sha512"
     },
-    "SQLitePCLRaw.lib.e_sqlite3/2.1.6": {
+    "Nethereum.Accounts/4.20.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2ObJJLkIUIxRpOUlZNGuD4rICpBnrBR5anjyfUFQep4hMOIeqW+XGQYzrNmHSVz5xSWZ3klSbh7sFR6UyDj68Q==",
-      "path": "sqlitepclraw.lib.e_sqlite3/2.1.6",
-      "hashPath": "sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512"
+      "sha512": "sha512-R+zBDaKjZPd/utUZD2nG/AOWvFbqjCiBdO7oA3nDGsAEioQU7NL+llFBCuvKgclui31/etPXe4WaRIq/8zdY6w==",
+      "path": "nethereum.accounts/4.20.0",
+      "hashPath": "nethereum.accounts.4.20.0.nupkg.sha512"
     },
-    "SQLitePCLRaw.provider.e_sqlite3/2.1.6": {
+    "Nethereum.BlockchainProcessing/4.20.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PQ2Oq3yepLY4P7ll145P3xtx2bX8xF4PzaKPRpw9jZlKvfe4LE/saAV82inND9usn1XRpmxXk7Lal3MTI+6CNg==",
-      "path": "sqlitepclraw.provider.e_sqlite3/2.1.6",
-      "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512"
+      "sha512": "sha512-tSFioc5wch/yK+l7ffwqY4Bm13/ZSlIGFSwXIjPcfIBTYB72z52DY6ZYZBej1SIIcZ0ExlxPqd0Z7m3WB6UBJA==",
+      "path": "nethereum.blockchainprocessing/4.20.0",
+      "hashPath": "nethereum.blockchainprocessing.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Contracts/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1+Q10G4JQULq7wCfa3ZYMlFTPGxiDkRB3rXu3fJS5FEYtE4Grx9zSwzXwmbqE+lxqsHf44Zk0V7EgikSwzsE2Q==",
+      "path": "nethereum.contracts/4.20.0",
+      "hashPath": "nethereum.contracts.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Hex/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-64PBxayb4hG2yLuBIWc5ZYAjOFmzmqpLVIp8rhFfXAsKnuJCuUHWmImC5+UZpSoQ1AqtgHz05oaq5UxHdMEZcw==",
+      "path": "nethereum.hex/4.20.0",
+      "hashPath": "nethereum.hex.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.JsonRpc.Client/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-92Zxt1GbBGhHX1UDNaAKIBR5VAM3+SUBB3O8aApBRj2GyjALAEINaok/vNN0GrY9YswB19LbeyTjCnrC1Ag7ww==",
+      "path": "nethereum.jsonrpc.client/4.20.0",
+      "hashPath": "nethereum.jsonrpc.client.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.JsonRpc.RpcClient/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yedvcuDDh3mvnCdh2jufnQzMfjPz/scjTaIZ9Jo5q3V8NnODKgeWuKOAv8yPTJvIMU/uWL6QCPQJC9JqIYLa/Q==",
+      "path": "nethereum.jsonrpc.rpcclient/4.20.0",
+      "hashPath": "nethereum.jsonrpc.rpcclient.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.KeyStore/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XpLJM2PUZs2oWw4Pc6Z0lDmvGYBrrgr7ngBXGSbkF6hoDFW7HOH81MlAOilVyiMhhSWiF0cFo1ZOmKXYy7O2kg==",
+      "path": "nethereum.keystore/4.20.0",
+      "hashPath": "nethereum.keystore.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Merkle.Patricia/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wkHbreKOsATV8CFnOKHFWfHBpC2yGQwM5DdRoLEs3yUEnk4gvEJAaR6le/1vlLe1iTVstqVZzVTdeWmAcLuPuw==",
+      "path": "nethereum.merkle.patricia/4.20.0",
+      "hashPath": "nethereum.merkle.patricia.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Model/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ahi0xt4iGwOvB1WRMR/0N8+W7GS0COxw9dpc/b8bStV8EyJzxR5BQYRLBeoKWOdwjKZq3xp9gHc4Pjsbh7cUUg==",
+      "path": "nethereum.model/4.20.0",
+      "hashPath": "nethereum.model.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.RLP/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gh3+ppe3qbP2l38gcrtcWPk2I3xdGXJqCxbxw9ni3LzhsW1JLRpB99+Uo95XW8H+lXbPrNef922t+yXooSBp0Q==",
+      "path": "nethereum.rlp/4.20.0",
+      "hashPath": "nethereum.rlp.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.RPC/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v4W78CPCq0FnLow96lRszqK++/oKxl8Kjblu/n9OmXqqMF93gnQkEBnFKh37SsnwxXMjLILNczTIDKE0YU1OBA==",
+      "path": "nethereum.rpc/4.20.0",
+      "hashPath": "nethereum.rpc.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Signer/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KVtC3g93Usv0zZEU21upePOR/EftGL65hi5+ZjxdraxBEipR80Cg4GXzD3WByDjI3/bkTpppS0MfBAfIxmOP6w==",
+      "path": "nethereum.signer/4.20.0",
+      "hashPath": "nethereum.signer.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Signer.EIP712/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2xhl6NB0i7pzxvML1n/aML+0sZx/q1gN/DsDSRAbyqzt0f+Im6aytgj8plNMLJqrsd/noCjMig2HpMELIVNqtA==",
+      "path": "nethereum.signer.eip712/4.20.0",
+      "hashPath": "nethereum.signer.eip712.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Util/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MVkmeOz4qHVOX+l4q/zCEUurEQFqAJ+mGUm7ZkCCtD4zHTDuAAp2Pg2RawAsGKLQDLSl0b9zQ9x8/KYepLrmHQ==",
+      "path": "nethereum.util/4.20.0",
+      "hashPath": "nethereum.util.4.20.0.nupkg.sha512"
+    },
+    "Nethereum.Web3/4.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zk0oiYSb1sT6UvJ4oLgrxifOYQ9fD7MoTFCUYp6Dlg5QpQ5EEzzioJfkraJBDM3aG8hEpUXrXcpoF28VU1ANhg==",
+      "path": "nethereum.web3/4.20.0",
+      "hashPath": "nethereum.web3.4.20.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Npgsql/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MuJzLoWCaQhQAR3oh66YR0Ir6mxuezncGX3f8wxvAc21g0+9HICktJQlqMoODhxztZKXE5k9GxRxqUAN+vPb4g==",
+      "path": "npgsql/8.0.2",
+      "hashPath": "npgsql.8.0.2.nupkg.sha512"
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eoZPynwkZTWFTgnocvXORuCL2yFZtscrUdqVhjxiRULpC7BMg9zhLM5oDZAU5PoX1PgN77hmkKE4a3PQiHqh7Q==",
+      "path": "npgsql.entityframeworkcore.postgresql/8.0.2",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XpJVIhjPiO0o+DU36eeIzqnRilDmE8Z7Kfhm9V9o1yNqM3ikgleD94Z5W/LeEu3t63LaZl2CNJexaix+I6AUMg==",
+      "path": "portable.bouncycastle/1.8.2",
+      "hashPath": "portable.bouncycastle.1.8.2.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",
@@ -1064,13 +1287,6 @@
       "sha512": "sha512-ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
       "path": "system.io.pipelines/6.0.3",
       "hashPath": "system.io.pipelines.6.0.3.nupkg.sha512"
-    },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Reflection.Metadata/6.0.1": {
       "type": "package",

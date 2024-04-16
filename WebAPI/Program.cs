@@ -5,7 +5,7 @@ using WebAPI.Configs;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlite(builder.Configuration.GetConnectionString("DbConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"));
 });
 
 builder.Services.AddSwaggerGen();

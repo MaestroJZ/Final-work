@@ -6,5 +6,5 @@ public class VotingDto : BaseDto
     public bool IsActive { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
-    public ICollection<BallotDto> BallotOptions { get; set; }
+    public ICollection<BallotDto> Ballots { get; set; }
 }

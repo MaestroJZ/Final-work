@@ -49,6 +49,6 @@ public class VotingService : BaseService<Voting, VotingDto>, IVotingService
         };
 
         await _voteService.Add(voteDto);
-        return true; // Голос успешно учтен
+        return true;
     }
 }

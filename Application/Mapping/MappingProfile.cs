@@ -9,7 +9,7 @@ public class MappingProfile : Profile
     public MappingProfile() 
     {
         CreateMap<Voting, VotingDto>()
-            .ForMember(dest => dest.BallotOptions, opt => opt.MapFrom(src => src.BallotOptions));
+            .ForMember(dest => dest.Ballots, opt => opt.MapFrom(src => src.Ballots));
 
         CreateMap<Ballot, BallotDto>().ReverseMap();
         CreateMap<Vote, VoteDto>().ReverseMap();

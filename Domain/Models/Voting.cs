@@ -15,6 +15,5 @@ public class Voting : Entity
 
     [Required]
     public DateTime EndTime { get; set; }
-
-    public ICollection<Ballot> BallotOptions { get; set; }
+    public ICollection<Ballot> Ballots { get; set; }
 }
