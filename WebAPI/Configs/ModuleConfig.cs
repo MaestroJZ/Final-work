@@ -16,6 +16,7 @@ public static class ModuleConfig
         services.AddTransient(typeof(IBaseService<,>), typeof(BaseService<,>));
         services.AddScoped<IHashPasswordService, HashPasswordService>();
         services.AddScoped<DbContext, DataContext>();
+        services.AddScoped<IUserService, UserService>();
         services.AddScoped<ICandidateService, CandiateService>();
         services.AddScoped<IVoterService, VoterService>();
         services.AddScoped<IElectionService, ElectionService>();

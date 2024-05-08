@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Controllers;
 
 [Authorize]
-public class CandidateController(ICandidateService service) : BaseController
+public class ElectionsController(IElectionService service) : BaseController
 {
     [HttpGet]
     public async Task<IActionResult> Get(Guid id)
@@ -39,7 +39,7 @@ public class CandidateController(ICandidateService service) : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> Add([FromBody] CandidateDto dto)
+    public async Task<IActionResult> Add([FromBody] ElectionDto dto)
     {
         try
         {
@@ -54,7 +54,7 @@ public class CandidateController(ICandidateService service) : BaseController
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update([FromBody] CandidateDto dto)
+    public async Task<IActionResult> Update([FromBody] ElectionDto dto)
     {
         try
         {

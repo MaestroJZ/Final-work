@@ -12,6 +12,7 @@ public class DataContext : DbContext
     public DbSet<Candidate> Candidates { get; set; }
     public DbSet<Election> Elections { get; set; }
     public DbSet<Voter> Voters { get; set; }
+    public DbSet<User> Users { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,6 +23,9 @@ public class DataContext : DbContext
             .HasKey(c => c.Id);
         
         modelBuilder.Entity<Election>()
+            .HasKey(c => c.Id);
+
+        modelBuilder.Entity<User>()
             .HasKey(c => c.Id);
     }
 }

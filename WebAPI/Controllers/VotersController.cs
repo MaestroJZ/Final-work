@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Controllers;
 
 [Authorize]
-public class VoterController(IVoterService service) : BaseController
+public class VotersController(IVoterService service) : BaseController
 {
     [HttpGet]
     public async Task<IActionResult> Get(Guid id)
@@ -31,6 +31,21 @@ public class VoterController(IVoterService service) : BaseController
             var candidates = await service.GetAll(x => x.IsDeleted == false);
 
             return ResponseOk(candidates);
+        }
+        catch (Exception ex)
+        {
+            return ResponseException(ex);
+        }
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Add([FromBody] VoterDto dto)
+    {
+        try
+        {
+            await service.Add(dto);
+            
+            return ResponseOk("Added");
         }
         catch (Exception ex)
         {
