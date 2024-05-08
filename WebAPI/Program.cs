@@ -1,33 +1,42 @@
-using Infrastructure.DAO;
-using Microsoft.EntityFrameworkCore;
 using WebAPI.Configs;
 
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"));
-});
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
+var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+builder.Configuration.SetBasePath(Directory.GetCurrentDirectory());
+builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env}.json", optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+builder.Services.ConfigureModule();
+
+ConfigServices.ConfigureServices(builder.Services, builder.Configuration);
+
+SwaggerConfig.SwaggerCfg(builder.Services);
+
 builder.Services.AddControllers();
-ModuleConfig.ConfigureModule(builder.Services);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
+app.UseCors();
 app.MapControllers();
-
 app.Run();
-

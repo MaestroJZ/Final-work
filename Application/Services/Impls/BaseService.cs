@@ -27,20 +27,21 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
 
     public async Task Update(TDto dto)
     {
-        var entity = await _repository.SelectFirst(x => x.Id == dto.Id);
+        var entity = await _repository.SelectFirst(dto.Id);
         if (entity is not null) {
             _mapper.Map(dto, entity);
             await _repository.Update(entity);
         }
     }
 
-    public async Task Delete(int id)
+    public async Task Delete(Guid id)
     {
-        var entity = await _repository.SelectFirst(x => x.Id == id);
+        var entity = await _repository.SelectFirst(id);
         if (entity != null)
         {
-            await _repository.Delete(entity);
-            await _repository.SaveChanges();
+            entity.DeletedAt = DateTime.UtcNow;
+            entity.IsDeleted = true;
+            await _repository.Update(entity);
         }
     }
 
@@ -50,9 +51,9 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
         return _mapper.Map<ICollection<TDto>>(entities);
     }
 
-    public async Task<TDto?> Get(Expression<Func<T, bool>> expression)
+    public async Task<TDto?> Get(Guid id)
     {
-        var entity = await _repository.SelectFirst(expression);
+        var entity = await _repository.SelectFirst(id);
         return _mapper.Map<TDto?>(entity);
     }
 }

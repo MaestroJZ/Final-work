@@ -9,12 +9,19 @@ public class DataContext : DbContext
     {
     }
 
-    public DbSet<Voting> Votings { get; set; }
-    public DbSet<Ballot> BallotOptions { get; set; }
-    public DbSet<Vote> Votes { get; set; }
+    public DbSet<Candidate> Candidates { get; set; }
+    public DbSet<Election> Elections { get; set; }
+    public DbSet<Voter> Voters { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
-        // здесь можно настроить конфигурации для сущностей или их отношений, если это необходимо
+        modelBuilder.Entity<Candidate>()
+            .HasKey(c => c.Id);
+
+        modelBuilder.Entity<Voter>()
+            .HasKey(c => c.Id);
+        
+        modelBuilder.Entity<Election>()
+            .HasKey(c => c.Id);
     }
 }

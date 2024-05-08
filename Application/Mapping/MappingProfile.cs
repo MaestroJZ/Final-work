@@ -6,14 +6,14 @@ namespace Application.Mapping;
 
 public class MappingProfile : Profile
 {
-    public MappingProfile() 
+    public MappingProfile()
     {
-        CreateMap<Voting, VotingDto>()
-            .ForMember(dest => dest.Ballots, opt => opt.MapFrom(src => src.Ballots));
+        CreateMap<Candidate, CandidateDto>().ReverseMap();
+        
+        CreateMap<Election, ElectionDto>().ReverseMap();
+        
+        CreateMap<Voter, VoterDto>().ReverseMap();
 
-        CreateMap<Ballot, BallotDto>().ReverseMap();
-        CreateMap<Vote, VoteDto>().ReverseMap();
-            
-        CreateMap<VotingDto, Voting>();
+        CreateMap<UserRequestDto, User>().ReverseMap();
     }
 }

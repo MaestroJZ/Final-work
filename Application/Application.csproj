@@ -13,8 +13,10 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
       <PackageReference Include="Nethereum.Contracts" Version="4.20.0" />
       <PackageReference Include="Nethereum.Web3" Version="4.20.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.1" />
     </ItemGroup>
 
 </Project>

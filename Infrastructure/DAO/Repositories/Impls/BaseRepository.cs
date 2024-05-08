@@ -36,6 +36,12 @@ public class BaseRepository<T>: IBaseRepository<T> where T:Entity
         return await _dbContext.Set<T>().Where(expression).ToListAsync();
     }
 
+    public async Task<T?> SelectFirst(Guid id)
+    {
+        return await _dbContext.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
+    }
+
+    /// <inheritdoc />
     public async Task<T?> SelectFirst(Expression<Func<T, bool>> expression)
     {
         return await _dbContext.Set<T>().FirstOrDefaultAsync(expression);

@@ -39,11 +39,13 @@ public class BaseController : ControllerBase
         var result = new { result = "No Data", successed = successed };
         return NotFound(result);
     }
+    
     protected IActionResult ResponseUnauthorized(bool successed = false)
     {
         var result = new { result = "User unauthorized", successed = successed };
         return Unauthorized(result);
     }
+    
     protected IActionResult ResponseError(object data, bool successed = false)
     {
         var result = new { result = data, successed = successed };
