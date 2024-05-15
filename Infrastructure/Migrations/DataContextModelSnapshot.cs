@@ -34,6 +34,9 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<Guid>("ElectionId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -49,6 +52,8 @@ namespace Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ElectionId");
 
                     b.ToTable("Candidates");
                 });
@@ -90,6 +95,38 @@ namespace Infrastructure.Migrations
                     b.ToTable("Elections");
                 });
 
+            modelBuilder.Entity("Domain.Models.Transaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CandidateId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CandidateId");
+
+                    b.ToTable("Transaction");
+                });
+
             modelBuilder.Entity("Domain.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -125,6 +162,39 @@ namespace Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Domain.Models.Vote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ElectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("VoterId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ElectionId");
+
+                    b.HasIndex("VoterId");
+
+                    b.ToTable("Votes");
+                });
+
             modelBuilder.Entity("Domain.Models.Voter", b =>
                 {
                     b.Property<Guid>("Id")
@@ -154,6 +224,57 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Voters");
+                });
+
+            modelBuilder.Entity("Domain.Models.Candidate", b =>
+                {
+                    b.HasOne("Domain.Models.Election", "Election")
+                        .WithMany("Candidates")
+                        .HasForeignKey("ElectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Election");
+                });
+
+            modelBuilder.Entity("Domain.Models.Transaction", b =>
+                {
+                    b.HasOne("Domain.Models.Candidate", "Candidate")
+                        .WithMany("Transactions")
+                        .HasForeignKey("CandidateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Candidate");
+                });
+
+            modelBuilder.Entity("Domain.Models.Vote", b =>
+                {
+                    b.HasOne("Domain.Models.Election", "Election")
+                        .WithMany()
+                        .HasForeignKey("ElectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.Voter", "Voter")
+                        .WithMany()
+                        .HasForeignKey("VoterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Election");
+
+                    b.Navigation("Voter");
+                });
+
+            modelBuilder.Entity("Domain.Models.Candidate", b =>
+                {
+                    b.Navigation("Transactions");
+                });
+
+            modelBuilder.Entity("Domain.Models.Election", b =>
+                {
+                    b.Navigation("Candidates");
                 });
 #pragma warning restore 612, 618
         }

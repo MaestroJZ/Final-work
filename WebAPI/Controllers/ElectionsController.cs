@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-[Authorize]
+
 public class ElectionsController(IElectionService service) : BaseController
 {
     [HttpGet]
@@ -37,7 +37,24 @@ public class ElectionsController(IElectionService service) : BaseController
             return ResponseException(ex);
         }
     }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetActiveElections()
+    {
+        try
+        {
+            var candidates = await service.GetAll(
+                x => x.IsDeleted == false
+                && x.EndDate > DateTime.UtcNow);
 
+            return ResponseOk(candidates);
+        }
+        catch (Exception ex)
+        {
+            return ResponseException(ex);
+        }
+    }
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] ElectionDto dto)
     {
@@ -45,14 +62,14 @@ public class ElectionsController(IElectionService service) : BaseController
         {
             await service.Add(dto);
             
-            return ResponseOk("Added");
+            return ResponseOk("Сайлау қосылды");
         }
         catch (Exception ex)
         {
             return ResponseException(ex);
         }
     }
-
+    [Authorize]
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] ElectionDto dto)
     {
@@ -60,14 +77,14 @@ public class ElectionsController(IElectionService service) : BaseController
         {
             await service.Update(dto);
             
-            return ResponseOk("Updated");
+            return ResponseOk("Сайлау жаңартылды");
         }
         catch (Exception ex)
         {
             return ResponseException(ex);
         }
     }
-
+    [Authorize]
     [HttpDelete]
     public async Task<IActionResult> Delete(Guid id)
     {
@@ -75,7 +92,7 @@ public class ElectionsController(IElectionService service) : BaseController
         {
             await service.Delete(id);
             
-            return ResponseOk("Deleted");
+            return ResponseOk("Сайлау жойылды");
         }
         catch (Exception ex)
         {

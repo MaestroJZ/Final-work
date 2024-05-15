@@ -14,6 +14,10 @@ public class MappingProfile : Profile
         
         CreateMap<Voter, VoterDto>().ReverseMap();
 
+        CreateMap<Transaction, TransactionDto>().ReverseMap();
+
+        CreateMap<Vote, VoteDto>().ReverseMap();
+
         CreateMap<UserRequestDto, User>().ReverseMap();
     }
 }

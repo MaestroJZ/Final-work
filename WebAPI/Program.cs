@@ -10,7 +10,7 @@ builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile($"appsettings.{env}.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
 
-builder.Services.ConfigureModule();
+builder.Services.ConfigureModule(builder.Configuration);
 
 ConfigServices.ConfigureServices(builder.Services, builder.Configuration);
 

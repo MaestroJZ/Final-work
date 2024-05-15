@@ -6,4 +6,6 @@ public class Election : Entity
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public string Description { get; set; }
+    
+    public ICollection<Candidate> Candidates { get; set; }
 }

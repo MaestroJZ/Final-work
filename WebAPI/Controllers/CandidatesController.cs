@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-[Authorize]
 public class CandidatesController(ICandidateService service) : BaseController
 {
     [HttpGet]
@@ -37,7 +36,8 @@ public class CandidatesController(ICandidateService service) : BaseController
             return ResponseException(ex);
         }
     }
-
+    
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] CandidateDto dto)
     {
@@ -45,7 +45,7 @@ public class CandidatesController(ICandidateService service) : BaseController
         {
             await service.Add(dto);
             
-            return ResponseOk("Added");
+            return ResponseOk("Үміткер қосылды");
         }
         catch (Exception ex)
         {
@@ -53,6 +53,7 @@ public class CandidatesController(ICandidateService service) : BaseController
         }
     }
 
+    [Authorize]
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] CandidateDto dto)
     {
@@ -60,7 +61,7 @@ public class CandidatesController(ICandidateService service) : BaseController
         {
             await service.Update(dto);
             
-            return ResponseOk("Updated");
+            return ResponseOk("Үміткер жаңартылды");
         }
         catch (Exception ex)
         {
@@ -68,6 +69,7 @@ public class CandidatesController(ICandidateService service) : BaseController
         }
     }
 
+    [Authorize]
     [HttpDelete]
     public async Task<IActionResult> Delete(Guid id)
     {
@@ -75,7 +77,7 @@ public class CandidatesController(ICandidateService service) : BaseController
         {
             await service.Delete(id);
             
-            return ResponseOk("Deleted");
+            return ResponseOk("Үміткер жойылды");
         }
         catch (Exception ex)
         {

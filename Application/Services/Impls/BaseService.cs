@@ -19,10 +19,11 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
         _mapper = mapper;
     }
     
-    public async Task Add(TDto dto)
+    public virtual async Task<Guid> Add(TDto dto)
     {
         var entity = _mapper.Map<T>(dto);
         await _repository.Insert(entity);
+        return entity.Id;
     }
 
     public async Task Update(TDto dto)
@@ -54,6 +55,12 @@ public class BaseService<T, TDto>: IBaseService<T, TDto>
     public async Task<TDto?> Get(Guid id)
     {
         var entity = await _repository.SelectFirst(id);
+        return _mapper.Map<TDto?>(entity);
+    }
+    
+    public async Task<TDto?> Get(Expression<Func<T, bool>> expression)
+    {
+        var entity = await _repository.SelectFirst(expression);
         return _mapper.Map<TDto?>(entity);
     }
 }

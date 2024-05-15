@@ -4,7 +4,7 @@ namespace Application.Services;
 
 public interface IBaseService<T, TDto>
 {
-    Task Add(TDto dto);
+    Task<Guid> Add(TDto dto);
     Task Update(TDto dto);
     Task Delete(Guid id);
     Task<ICollection<TDto>> GetAll(Expression<Func<T, bool>> expression);

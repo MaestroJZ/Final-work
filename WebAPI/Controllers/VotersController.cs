@@ -1,11 +1,12 @@
 using Application.DTOs;
 using Application.Services;
 using Microsoft.AspNetCore.Authorization;
+//using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-[Authorize]
+//[Authorize]
 public class VotersController(IVoterService service) : BaseController
 {
     [HttpGet]
@@ -43,9 +44,16 @@ public class VotersController(IVoterService service) : BaseController
     {
         try
         {
-            await service.Add(dto);
+            var check = await service.GetAll(x => x.PhoneNumber == dto.PhoneNumber);
             
-            return ResponseOk("Added");
+            if (check.Count == 0)
+            {
+                var id = await service.Add(dto);
+                return ResponseOk(id);
+            }
+
+            var voter = check.First(x => x.PhoneNumber == dto.PhoneNumber);
+            return ResponseOk(voter);
         }
         catch (Exception ex)
         {
@@ -53,6 +61,7 @@ public class VotersController(IVoterService service) : BaseController
         }
     }
 
+    [Authorize]
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] VoterDto dto)
     {
@@ -60,14 +69,15 @@ public class VotersController(IVoterService service) : BaseController
         {
             await service.Update(dto);
             
-            return ResponseOk("Updated");
+            return ResponseOk("Жаңартылды");
         }
         catch (Exception ex)
         {
             return ResponseException(ex);
         }
     }
-
+    
+    [Authorize]
     [HttpDelete]
     public async Task<IActionResult> Delete(Guid id)
     {
@@ -75,7 +85,7 @@ public class VotersController(IVoterService service) : BaseController
         {
             await service.Delete(id);
             
-            return ResponseOk("Deleted");
+            return ResponseOk("Жойылды");
         }
         catch (Exception ex)
         {

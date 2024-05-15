@@ -13,7 +13,7 @@ public class UsersController(IUserService service) : BaseController
         {
             var user = await service.Login(userRequestDto);
             
-            return !string.IsNullOrEmpty(user.Token) ? ResponseOk(user.Token) : ResponseError("Failed");
+            return !string.IsNullOrEmpty(user.Token) ? ResponseOk(user.Token) : ResponseError("Сіз енгізген мәләметтер жоқ");
         }
         catch (Exception ex)
         {
@@ -22,7 +22,7 @@ public class UsersController(IUserService service) : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> Register(UserRequestDto userRequestDto)
+    public async Task<IActionResult> Register([FromBody] UserRequestDto userRequestDto)
     {
         try
         {
@@ -30,10 +30,10 @@ public class UsersController(IUserService service) : BaseController
             
             if (user != null)
             {
-                return ResponseOk("Success");
+                return ResponseOk("Сәтті");
             }
 
-            return ResponseError("Failed");
+            return ResponseError("Қате");
         }
         catch (Exception ex)
         {
